@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManagementAPI", "BookManagementAPI\BookManagementAPI.csproj", "{830474D0-8356-493E-B571-6B61A5DDC961}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{9B1AAEEA-C43A-495D-A279-58ECAC2FD526}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{C272490E-731B-46D1-BD73-18B83E1B2FCE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{830474D0-8356-493E-B571-6B61A5DDC961}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{830474D0-8356-493E-B571-6B61A5DDC961}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{830474D0-8356-493E-B571-6B61A5DDC961}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{830474D0-8356-493E-B571-6B61A5DDC961}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B1AAEEA-C43A-495D-A279-58ECAC2FD526}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B1AAEEA-C43A-495D-A279-58ECAC2FD526}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B1AAEEA-C43A-495D-A279-58ECAC2FD526}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B1AAEEA-C43A-495D-A279-58ECAC2FD526}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C272490E-731B-46D1-BD73-18B83E1B2FCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C272490E-731B-46D1-BD73-18B83E1B2FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C272490E-731B-46D1-BD73-18B83E1B2FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C272490E-731B-46D1-BD73-18B83E1B2FCE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

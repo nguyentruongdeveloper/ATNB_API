@@ -23,7 +23,16 @@ namespace BookManagementAPI.Controllers
                     obj = new
                     {
                         StatusCode = 200,
-                        data = _unitOfWork.PublisherRepository.GetAll().Where(x => (x.IsActive == true && x.PublisherName.Contains(searchname)) || (x.IsActive == true && searchname == "0")).OrderByDescending(x => x.PublisherID).Skip(skip * pagesize).Take(pagesize).ToList(),
+                        data = _unitOfWork.PublisherRepository.GetAll()
+                        .Where(x => (x.IsActive == true && x.PublisherName.Contains(searchname)) || (x.IsActive == true && searchname == "0"))
+                        .OrderByDescending(x => x.PublisherID).Skip(skip * pagesize).Take(pagesize)
+                        .Select(x => new
+                        {
+                            PublisherID = x.PublisherID,
+                            PublisherName = x.PublisherName,
+                            Discription = x.Description
+                        })
+                        .ToList(),
                         total = _unitOfWork._context.Publishers.Count(x => (x.IsActive == true && x.PublisherName.Contains(searchname)) || (x.IsActive == true && searchname == "0"))
                     };
 

@@ -68,7 +68,9 @@
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <EntityDeploy Include="BookManagementDbContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BookManagementDbContext.Designer.cs</LastGenOutput>

@@ -23,7 +23,15 @@ namespace BookManagementAPI.Controllers
                     obj = new
                     {
                         StatusCode = 200,
-                        data = _unitOfWork.AuthorRepository.GetAll().Where(x => (x.IsActive == true && x.AuthorName.Contains(searchname)) || (x.IsActive == true && searchname == "0")).OrderByDescending(x => x.AuthorID).Skip(skip * pagesize).Take(pagesize).ToList(),
+                        data = _unitOfWork.AuthorRepository.GetAll().Where(x => (x.IsActive == true && x.AuthorName.Contains(searchname)) || (x.IsActive == true && searchname == "0"))
+                        .OrderByDescending(x => x.AuthorID).Skip(skip * pagesize).Take(pagesize)
+                        .Select(x => new
+                        {
+                            AuthorID = x.AuthorID,
+                            AuthorName = x.AuthorName,
+                            History = x.History
+                        })
+                        .ToList(),
                         total = _unitOfWork._context.Authors.Count(x => (x.IsActive == true && x.AuthorName.Contains(searchname)) || (x.IsActive == true && searchname == "0"))
                     };
 
@@ -50,7 +58,7 @@ namespace BookManagementAPI.Controllers
                     obj = new
                     {
                         StatusCode = 200,
-                        data = _unitOfWork.AuthorRepository.GetAll().Where(x => x.IsActive == true).Select(x => new { x.AuthorID, x.AuthorName}).ToList()
+                        data = _unitOfWork.AuthorRepository.GetAll().Where(x => x.IsActive == true).Select(x => new { x.AuthorID, x.AuthorName }).ToList()
 
 
 

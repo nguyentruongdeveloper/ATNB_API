@@ -22,3 +22,16 @@ C:\Users\TruongNX15\Desktop\Angular4\Lesson4\ATNB_API\ATNB_API\ATNB_API\BookMana
 C:\Users\TruongNX15\Desktop\Angular4\Lesson4\ATNB_API\ATNB_API\ATNB_API\BookManagementAPI\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 C:\Users\TruongNX15\Desktop\Angular4\Lesson4\ATNB_API\ATNB_API\ATNB_API\BookManagementAPI\DAO\obj\Debug\DAO.dll
 C:\Users\TruongNX15\Desktop\Angular4\Lesson4\ATNB_API\ATNB_API\ATNB_API\BookManagementAPI\DAO\obj\Debug\DAO.pdb
+E:\LapTrinh\Angular4\ATNB_19_5_2018\ATNB_API\BookManagementAPI\DAO\bin\Debug\DAO.dll.config
+E:\LapTrinh\Angular4\ATNB_19_5_2018\ATNB_API\BookManagementAPI\DAO\bin\Debug\DAO.dll
+E:\LapTrinh\Angular4\ATNB_19_5_2018\ATNB_API\BookManagementAPI\DAO\bin\Debug\DAO.pdb
+E:\LapTrinh\Angular4\ATNB_19_5_2018\ATNB_API\BookManagementAPI\DAO\bin\Debug\DTO.dll
+E:\LapTrinh\Angular4\ATNB_19_5_2018\ATNB_API\BookManagementAPI\DAO\bin\Debug\EntityFramework.dll
+E:\LapTrinh\Angular4\ATNB_19_5_2018\ATNB_API\BookManagementAPI\DAO\bin\Debug\EntityFramework.SqlServer.dll
+E:\LapTrinh\Angular4\ATNB_19_5_2018\ATNB_API\BookManagementAPI\DAO\bin\Debug\DTO.pdb
+E:\LapTrinh\Angular4\ATNB_19_5_2018\ATNB_API\BookManagementAPI\DAO\bin\Debug\EntityFramework.xml
+E:\LapTrinh\Angular4\ATNB_19_5_2018\ATNB_API\BookManagementAPI\DAO\bin\Debug\EntityFramework.SqlServer.xml
+E:\LapTrinh\Angular4\ATNB_19_5_2018\ATNB_API\BookManagementAPI\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+E:\LapTrinh\Angular4\ATNB_19_5_2018\ATNB_API\BookManagementAPI\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+E:\LapTrinh\Angular4\ATNB_19_5_2018\ATNB_API\BookManagementAPI\DAO\obj\Debug\DAO.dll
+E:\LapTrinh\Angular4\ATNB_19_5_2018\ATNB_API\BookManagementAPI\DAO\obj\Debug\DAO.pdb

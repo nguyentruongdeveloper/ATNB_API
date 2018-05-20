@@ -34,8 +34,8 @@ namespace DTO
         public virtual Author Author { get; set; }
         public virtual Category Category { get; set; }
         public virtual Publisher Publisher { get; set; }
+        public virtual StatusBook StatusBook { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comments { get; set; }
-        public virtual StatusBook StatusBook { get; set; }
     }
 }

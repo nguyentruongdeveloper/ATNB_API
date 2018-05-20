@@ -14,7 +14,7 @@ namespace BookManagementAPI.Controllers
     {
         [HttpGet]
         [Route("api/category/{searchname}/{skip}/{pagesize}")]
-        public HttpResponseMessage GetAllCategory(string searchname,int skip, int pagesize)
+        public HttpResponseMessage GetAllCategory(string searchname, int skip, int pagesize)
         {
             object obj;
             try
@@ -22,11 +22,20 @@ namespace BookManagementAPI.Controllers
 
                 using (var _unitOfWork = new UnitOfWork())
                 {
-                    
+
                     obj = new
                     {
                         StatusCode = 200,
-                        data = _unitOfWork.CategoryRepository.GetAll().Where(x => (x.IsActive == true && x.CategoryName.Contains(searchname)) || (x.IsActive == true && searchname == "0")).OrderByDescending(x => x.Created).Skip(skip * pagesize).Take(pagesize).ToList(),
+                        data = _unitOfWork.CategoryRepository.GetAll()
+                        .Where(x => (x.IsActive == true && x.CategoryName.Contains(searchname)) || (x.IsActive == true && searchname == "0"))
+                        .OrderByDescending(x => x.Created).Skip(skip * pagesize).Take(pagesize)
+                        .Select(x => new
+                        {
+                            CategoryID = x.CategoryID,
+                            CategoryName = x.CategoryName,
+                            Discription = x.Description
+                        })
+                        .ToList(),
                         total = _unitOfWork._context.Categories.Count(x => (x.IsActive == true && x.CategoryName.Contains(searchname)) || (x.IsActive == true && searchname == "0"))
                     };
 
@@ -38,7 +47,7 @@ namespace BookManagementAPI.Controllers
             catch (Exception ex)
             {
                 obj = new { StatusCode = 500, data = new List<Category>() };
-                
+
             }
             return Request.CreateResponse(obj);
 
@@ -93,7 +102,7 @@ namespace BookManagementAPI.Controllers
 
                 };
 
-                    
+
 
 
             }

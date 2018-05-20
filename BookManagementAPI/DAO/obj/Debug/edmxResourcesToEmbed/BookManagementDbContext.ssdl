@@ -34,7 +34,7 @@
     </Key>
     <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CategoryName" Type="nvarchar" MaxLength="150" Nullable="false" />
-    <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
     <Property Name="IsActive" Type="bit" />
     <Property Name="Created" Type="datetime" />
   </EntityType>
@@ -77,13 +77,14 @@
   </EntityType>
   <EntityType Name="Users">
     <Key>
-      <PropertyRef Name="UserName" />
+      <PropertyRef Name="UserID" />
     </Key>
-    <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="IsActive" Type="bit" Nullable="false" />
-    <Property Name="Created" Type="nchar" MaxLength="10" />
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Created" Type="datetime" />
   </EntityType>
   <Association Name="FK_Book_Author">
     <End Role="Author" Type="Self.Author" Multiplicity="1" />
@@ -121,6 +122,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Book_StatusBook">
+    <End Role="StatusBook" Type="Self.StatusBook" Multiplicity="0..1" />
+    <End Role="Book" Type="Self.Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusBook">
+        <PropertyRef Name="StatusBookID" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="StatusBookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Comment_Book">
     <End Role="Book" Type="Self.Book" Multiplicity="1" />
     <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
@@ -130,18 +143,6 @@
       </Principal>
       <Dependent Role="Comment">
         <PropertyRef Name="BookID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_StautusBook_Book">
-    <End Role="StatusBook" Type="Self.StatusBook" Multiplicity="0..1" />
-    <End Role="Book" Type="Self.Book" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="StatusBook">
-        <PropertyRef Name="StatusBookID" />
-      </Principal>
-      <Dependent Role="Book">
-        <PropertyRef Name="StatusBookID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -166,13 +167,13 @@
       <End Role="Publisher" EntitySet="Publisher" />
       <End Role="Book" EntitySet="Book" />
     </AssociationSet>
+    <AssociationSet Name="FK_Book_StatusBook" Association="Self.FK_Book_StatusBook">
+      <End Role="StatusBook" EntitySet="StatusBook" />
+      <End Role="Book" EntitySet="Book" />
+    </AssociationSet>
     <AssociationSet Name="FK_Comment_Book" Association="Self.FK_Comment_Book">
       <End Role="Book" EntitySet="Book" />
       <End Role="Comment" EntitySet="Comment" />
-    </AssociationSet>
-    <AssociationSet Name="FK_StautusBook_Book" Association="Self.FK_StautusBook_Book">
-      <End Role="StatusBook" EntitySet="StatusBook" />
-      <End Role="Book" EntitySet="Book" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

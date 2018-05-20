@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\TruongNX15\Desktop\Angular4\Lesson4\ATNB_API\ATNB_API\ATNB_API\BookManagementAPI\DAO\BookManagementDbContext.edmx'. 
+﻿// T4 code generation is enabled for model 'E:\LapTrinh\Angular4\ATNB_19_5_2018\ATNB_API\BookManagementAPI\DAO\BookManagementDbContext.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

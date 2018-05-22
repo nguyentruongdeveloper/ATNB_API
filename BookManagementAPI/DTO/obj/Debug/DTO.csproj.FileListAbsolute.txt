@@ -14,3 +14,8 @@ E:\LapTrinh\Angular4\ATNB_19_5_2018\ATNB_API\BookManagementAPI\DTO\obj\Debug\DTO
 E:\LapTrinh\Angular4\ATNB_19_5_2018\ATNB_API\BookManagementAPI\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 E:\LapTrinh\Angular4\ATNB_19_5_2018\ATNB_API\BookManagementAPI\DTO\obj\Debug\DTO.dll
 E:\LapTrinh\Angular4\ATNB_19_5_2018\ATNB_API\BookManagementAPI\DTO\obj\Debug\DTO.pdb
+C:\Users\TruongNX15\Desktop\Angular4\Lesson4\ATNB\ATNB_21_5_2018\ATNB_API\BookManagementAPI\DTO\bin\Debug\DTO.dll
+C:\Users\TruongNX15\Desktop\Angular4\Lesson4\ATNB\ATNB_21_5_2018\ATNB_API\BookManagementAPI\DTO\bin\Debug\DTO.pdb
+C:\Users\TruongNX15\Desktop\Angular4\Lesson4\ATNB\ATNB_21_5_2018\ATNB_API\BookManagementAPI\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\TruongNX15\Desktop\Angular4\Lesson4\ATNB\ATNB_21_5_2018\ATNB_API\BookManagementAPI\DTO\obj\Debug\DTO.dll
+C:\Users\TruongNX15\Desktop\Angular4\Lesson4\ATNB\ATNB_21_5_2018\ATNB_API\BookManagementAPI\DTO\obj\Debug\DTO.pdb

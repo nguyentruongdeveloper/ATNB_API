@@ -30,24 +30,283 @@ namespace BookManagementAPI.Controllers
                         data = _unitOfWork._context.Books.Where(x => (x.IsActive == true && x.Title.Contains(searchname)) || (x.IsActive == true && searchname == "0"))
 
 
-                        .OrderByDescending(x => x.BookID).Skip(skip * pagesize).Take(pagesize).Select(x => new {
-                          BookID =  x.BookID,
-                          CategoryID = x.CategoryID,
-                          CategoryName=x.Category.CategoryName,
-                          AuthorID= x.AuthorID,
-                          AuthorName = x.Author.AuthorName,
-                          PublisherID = x.PublisherID,
-                          PublisherName=x.Publisher.PublisherName,
-                          Title= x.Title,
-                          Summary= x.Summary,
-                          Price =x.Price,
-                          Quantity = x.Quantity,
-                          StatusBookID = x.StatusBookID,
-                          StatusBookName = x.StatusBook.StatusBookName,
-                          ImgUrl = x.ImgUrl
+                        .OrderByDescending(x => x.BookID).Skip(skip * pagesize).Take(pagesize).Select(x => new
+                        {
+                            BookID = x.BookID,
+                            CategoryID = x.CategoryID,
+                            CategoryName = x.Category.CategoryName,
+                            AuthorID = x.AuthorID,
+                            AuthorName = x.Author.AuthorName,
+                            PublisherID = x.PublisherID,
+                            PublisherName = x.Publisher.PublisherName,
+                            Title = x.Title,
+                            Summary = x.Summary,
+                            Price = x.Price,
+                            Quantity = x.Quantity,
+                            StatusBookID = x.StatusBookID,
+                            StatusBookName = x.StatusBook.StatusBookName,
+                            ImgUrl = x.ImgUrl
                         }).ToList(),
 
                         total = _unitOfWork._context.Books.Count(x => (x.IsActive == true && x.Title.Contains(searchname)) || (x.IsActive == true && searchname == "0"))
+                    };
+
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                obj = new { StatusCode = 500, data = new List<Book>() };
+
+            }
+            return Request.CreateResponse(obj);
+
+        }
+        [HttpGet]
+        [Route("api/book/getnewbook")]
+        public HttpResponseMessage GetNewBook()
+        {
+            object obj;
+            try
+            {
+
+                using (var _unitOfWork = new UnitOfWork())
+                {
+
+                    obj = new
+                    {
+                        StatusCode = 200,
+                        data = _unitOfWork._context.Books.Where(x => x.IsActive==true)
+
+
+                        .OrderByDescending(x => x.BookID).Skip(0).Take(12).Select(x => new {
+                            BookID = x.BookID,
+                            CategoryID = x.CategoryID,
+                            CategoryName = x.Category.CategoryName,
+                            AuthorID = x.AuthorID,
+                            AuthorName = x.Author.AuthorName,
+                            PublisherID = x.PublisherID,
+                            PublisherName = x.Publisher.PublisherName,
+                            Title = x.Title,
+                            Summary = x.Summary,
+                            Price = x.Price,
+                            Quantity = x.Quantity,
+                            StatusBookID = x.StatusBookID,
+                            StatusBookName = x.StatusBook.StatusBookName,
+                            ImgUrl = x.ImgUrl
+                        }).ToList(),
+
+                        total = _unitOfWork._context.Books.Count(x => x.IsActive )
+                    };
+
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                obj = new { StatusCode = 500, data = new List<Book>() };
+
+            }
+            return Request.CreateResponse(obj);
+
+
+
+        }
+        [HttpGet]
+        [Route("api/book/getbookbyid/{Id}")]
+        public HttpResponseMessage GetBookByID(int Id)
+        {
+            object obj;
+            try
+            {
+
+                using (var _unitOfWork = new UnitOfWork())
+                {
+
+                    obj = new
+                    {
+                        StatusCode = 200,
+                        data = _unitOfWork._context.Books.Where(x => x.IsActive == true && x.BookID == Id)
+
+
+                        .OrderByDescending(x => x.BookID).Skip(0).Take(12).Select(x => new {
+                            BookID = x.BookID,
+                            CategoryID = x.CategoryID,
+                            CategoryName = x.Category.CategoryName,
+                            AuthorID = x.AuthorID,
+                            AuthorName = x.Author.AuthorName,
+                            PublisherID = x.PublisherID,
+                            PublisherName = x.Publisher.PublisherName,
+                            Title = x.Title,
+                            Summary = x.Summary,
+                            Price = x.Price,
+                            Quantity = x.Quantity,
+                            StatusBookID = x.StatusBookID,
+                            StatusBookName = x.StatusBook.StatusBookName,
+                            ImgUrl = x.ImgUrl
+                        }).ToList(),
+
+                        total = _unitOfWork._context.Books.Count(x => x.IsActive)
+                    };
+
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                obj = new { StatusCode = 500, data = new List<Book>() };
+
+            }
+            return Request.CreateResponse(obj);
+
+
+
+        }
+        [HttpGet]
+        [Route("api/book/getbookbycategory/{categoryID}")]
+        public HttpResponseMessage GetBookByCategory(int categoryID)
+        {
+            object obj;
+            try
+            {
+
+                using (var _unitOfWork = new UnitOfWork())
+                {
+
+                    obj = new
+                    {
+                        StatusCode = 200,
+                        data = _unitOfWork._context.Books.Where(x => x.IsActive == true && x.CategoryID== categoryID)
+
+
+                        .OrderByDescending(x => x.BookID).Skip(0).Take(12).Select(x => new {
+                            BookID = x.BookID,
+                            CategoryID = x.CategoryID,
+                            CategoryName = x.Category.CategoryName,
+                            AuthorID = x.AuthorID,
+                            AuthorName = x.Author.AuthorName,
+                            PublisherID = x.PublisherID,
+                            PublisherName = x.Publisher.PublisherName,
+                            Title = x.Title,
+                            Summary = x.Summary,
+                            Price = x.Price,
+                            Quantity = x.Quantity,
+                            StatusBookID = x.StatusBookID,
+                            StatusBookName = x.StatusBook.StatusBookName,
+                            ImgUrl = x.ImgUrl
+                        }).ToList(),
+
+                        total = _unitOfWork._context.Books.Count(x => x.IsActive)
+                    };
+
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                obj = new { StatusCode = 500, data = new List<Book>() };
+
+            }
+            return Request.CreateResponse(obj);
+
+
+
+        }
+        [HttpGet]
+        [Route("api/book/getbookbyauthor/{authorID}")]
+        public HttpResponseMessage GetBookByAuthor(int authorID)
+        {
+            object obj;
+            try
+            {
+
+                using (var _unitOfWork = new UnitOfWork())
+                {
+
+                    obj = new
+                    {
+                        StatusCode = 200,
+                        data = _unitOfWork._context.Books.Where(x => x.IsActive == true && x.AuthorID == authorID)
+
+
+                        .OrderByDescending(x => x.BookID).Skip(0).Take(12).Select(x => new {
+                            BookID = x.BookID,
+                            CategoryID = x.CategoryID,
+                            CategoryName = x.Category.CategoryName,
+                            AuthorID = x.AuthorID,
+                            AuthorName = x.Author.AuthorName,
+                            PublisherID = x.PublisherID,
+                            PublisherName = x.Publisher.PublisherName,
+                            Title = x.Title,
+                            Summary = x.Summary,
+                            Price = x.Price,
+                            Quantity = x.Quantity,
+                            StatusBookID = x.StatusBookID,
+                            StatusBookName = x.StatusBook.StatusBookName,
+                            ImgUrl = x.ImgUrl
+                        }).ToList(),
+
+                        total = _unitOfWork._context.Books.Count(x => x.IsActive)
+                    };
+
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                obj = new { StatusCode = 500, data = new List<Book>() };
+
+            }
+            return Request.CreateResponse(obj);
+
+
+
+        }
+        [HttpGet]
+        [Route("api/book/getbookbypublisher/{publisherID}")]
+        public HttpResponseMessage GetBookByPublisher(int publisherID)
+        {
+            object obj;
+            try
+            {
+
+                using (var _unitOfWork = new UnitOfWork())
+                {
+
+                    obj = new
+                    {
+                        StatusCode = 200,
+                        data = _unitOfWork._context.Books.Where(x => x.IsActive == true && x.PublisherID == publisherID)
+
+
+                        .OrderByDescending(x => x.BookID).Skip(0).Take(12).Select(x => new {
+                            BookID = x.BookID,
+                            CategoryID = x.CategoryID,
+                            CategoryName = x.Category.CategoryName,
+                            AuthorID = x.AuthorID,
+                            AuthorName = x.Author.AuthorName,
+                            PublisherID = x.PublisherID,
+                            PublisherName = x.Publisher.PublisherName,
+                            Title = x.Title,
+                            Summary = x.Summary,
+                            Price = x.Price,
+                            Quantity = x.Quantity,
+                            StatusBookID = x.StatusBookID,
+                            StatusBookName = x.StatusBook.StatusBookName,
+                            ImgUrl = x.ImgUrl
+                        }).ToList(),
+
+                        total = _unitOfWork._context.Books.Count(x => x.IsActive)
                     };
 
                 }

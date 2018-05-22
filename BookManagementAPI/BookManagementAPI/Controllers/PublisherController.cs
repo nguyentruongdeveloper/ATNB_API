@@ -30,7 +30,7 @@ namespace BookManagementAPI.Controllers
                         {
                             PublisherID = x.PublisherID,
                             PublisherName = x.PublisherName,
-                            Discription = x.Description
+                            Description = x.Description
                         })
                         .ToList(),
                         total = _unitOfWork._context.Publishers.Count(x => (x.IsActive == true && x.PublisherName.Contains(searchname)) || (x.IsActive == true && searchname == "0"))

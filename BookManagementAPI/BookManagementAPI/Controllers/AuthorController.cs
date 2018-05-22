@@ -47,6 +47,41 @@ namespace BookManagementAPI.Controllers
 
         }
         [HttpGet]
+        [Route("api/Author/gettopthree")]
+        public HttpResponseMessage GetTopThreeAuthor(string searchname, int skip, int pagesize)
+        {
+            object obj;
+            try
+            {
+                using (var _unitOfWork = new UnitOfWork())
+
+                    obj = new
+                    {
+                        StatusCode = 200,
+                        data = _unitOfWork.AuthorRepository.GetAll().Where(x => (x.IsActive == true && x.AuthorName.Contains(searchname)) || (x.IsActive == true && searchname == "0"))
+                        .OrderByDescending(x => x.Created).Skip(0).Take(3)
+                        .Select(x => new
+                        {
+                            AuthorID = x.AuthorID,
+                            AuthorName = x.AuthorName,
+                            History = x.History
+                        })
+                        .ToList(),
+                        total = _unitOfWork._context.Authors.Count(x => (x.IsActive == true && x.AuthorName.Contains(searchname)) || (x.IsActive == true && searchname == "0"))
+                    };
+
+
+            }
+            catch (Exception ex)
+            {
+                obj = new { StatusCode = 500, data = new List<Author>() };
+            }
+            return Request.CreateResponse(obj);
+
+
+
+        }
+        [HttpGet]
         [Route("api/Author/getall")]
         public HttpResponseMessage getAllAuthor()
         {

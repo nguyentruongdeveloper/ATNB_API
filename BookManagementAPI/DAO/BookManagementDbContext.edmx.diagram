@@ -4,15 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f766df651459449b83069957cf65ca03" Name="Diagram1">
+      <Diagram DiagramId="9a80c975d921412aa9e7b923bb3d3b36" Name="Diagram1">
         <EntityTypeShape EntityType="BookStoreModel.Author" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BookStoreModel.Book" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="BookStoreModel.Category" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BookStoreModel.Comment" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BookStoreModel.Publisher" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="BookStoreModel.StatusBook" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookStoreModel.sysdiagram" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookStoreModel.User" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.User" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
         <AssociationConnector Association="BookStoreModel.FK_Book_Author" ManuallyRouted="false" />
         <AssociationConnector Association="BookStoreModel.FK_Book_Category" ManuallyRouted="false" />
         <AssociationConnector Association="BookStoreModel.FK_Book_Publisher" ManuallyRouted="false" />

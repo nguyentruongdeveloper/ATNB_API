@@ -13,26 +13,25 @@ namespace DAO
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using DTO;
-
+    
     public partial class BookManagementDbContext : DbContext
     {
         public BookManagementDbContext()
             : base("name=BookStoreEntities")
         {
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-
+    
         public virtual DbSet<Author> Authors { get; set; }
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
         public virtual DbSet<Publisher> Publishers { get; set; }
         public virtual DbSet<StatusBook> StatusBooks { get; set; }
-
         public virtual DbSet<User> Users { get; set; }
     }
 }

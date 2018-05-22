@@ -33,7 +33,7 @@ namespace BookManagementAPI.Controllers
                         {
                             CategoryID = x.CategoryID,
                             CategoryName = x.CategoryName,
-                            Discription = x.Description
+                            Description = x.Description
                         })
                         .ToList(),
                         total = _unitOfWork._context.Categories.Count(x => (x.IsActive == true && x.CategoryName.Contains(searchname)) || (x.IsActive == true && searchname == "0"))
